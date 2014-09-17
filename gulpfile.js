@@ -23,3 +23,8 @@ gulp.task('build', function() {
         }))
         .pipe(gulp.dest('./build/'))
 });
+
+//default task, run all and then watch
+gulp.task('default', ['jshint', 'build'], function() {
+    gulp.watch('./src/jquery.textlimit.js', ['jshint','build']);
+});
