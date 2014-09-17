@@ -5,33 +5,54 @@
  * @license     http://unlicense.org/UNLICENSE
  */
 
-(function ( $ ) {
-    $.fn.textlimit = function( options ) {
+;(function ( $, window, document, undefined ) {
 
-        //default settings
-        var settings = $.extend({
+
+    var pluginName = "textlimit",
+        defaults = {
             wordLimit: 10
-        }, options);
+        };
 
-        //chain
-        return this.each(function(){
+    //Constructor
+    function Plugin( element, options ) {
+        this.element = element;
 
-            $(this).keyup(function(){
+        //empty array used so as not to overwrite defaults
+        this.options = $.extend( {}, defaults, options );
 
-                //select all words (non-whitespace characters)
-                var matches = this.value.match(/\S+/g);
+        this._defaults = defaults;
+        this._name = pluginName;
+        this.init();
+    }
 
-                if (matches && matches.length > settings.wordLimit) {
-                    var val = this.value;
+    Plugin.prototype.init = function () {
 
-                    //split on whitespace characters up to wordLimit
-                    val = val.split(/\s+/, settings.wordLimit);
-                    //space on the end so that continued typing creates new word
-                    this.value = val.join(" ") + " ";
-                }
+        var options = this.options;
+        $(this.element).keyup(function(){
 
-            });
+            //select all words (non-whitespace characters)
+            var matches = this.value.match(/\S+/g);
 
+            if (matches && matches.length > options.wordLimit) {
+                var val = this.value;
+
+                //split on whitespace characters up to wordLimit
+                val = val.split(/\s+/, options.wordLimit);
+                //space on the end so that continued typing creates new word
+                this.value = val.join(" ") + " ";
+            }
         });
     };
-}( jQuery ));
+
+    $.fn[pluginName] = function( options ) {
+        //chain
+        return this.each(function () {
+            //prevent multiple instantiations on same element
+            if (!$.data(this, 'plugin_' + pluginName)) {
+                $.data( this, 'plugin_' + pluginName,
+                        new Plugin( this, options ));
+            }
+        });
+    };
+
+}( jQuery, window, document ));
