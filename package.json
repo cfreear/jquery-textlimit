@@ -1,0 +1,39 @@
+{
+  "name": "jquery-textlimit",
+  "version": "1.0.0",
+  "description": "A simple plugin to restrict text inputs to specific word limits.",
+  "main": "gulpfile.js",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-jshint": "^1.8.4",
+    "gulp-qunit": "^0.3.3",
+    "gulp-strip-debug": "^1.0.1",
+    "gulp-uglifyjs": "^0.4.2"
+  },
+  "scripts": {
+    "test": "gulp travis"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://cfreear@github.com/cfreear/jquery-textlimit.git"
+  },
+  "keywords": [
+    "jquery",
+    "text",
+    "limit",
+    "word",
+    "input",
+    "textarea"
+  ],
+  "author": {"name": "Christian Freear", "email": "christianfreear@gmail.com"},
+  "license": "UNLICENSE",
+  "bugs": {
+    "url": "https://github.com/cfreear/jquery-textlimit/issues"
+  },
+  "homepage": "https://github.com/cfreear/jquery-textlimit"
+}
