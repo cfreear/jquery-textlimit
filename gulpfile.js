@@ -26,7 +26,7 @@ gulp.task('build', function() {
         .pipe(gulp.dest('./build/'));
 });
 
-gulp.task('travis' function() {
+gulp.task('travis', function() {
     return gulp.src('./tests/index.html')
         .pipe(qunit());
 });
