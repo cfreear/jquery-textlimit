@@ -30,7 +30,10 @@
     "input",
     "textarea"
   ],
-  "author": {"name": "Christian Freear", "email": "christianfreear@gmail.com"},
+  "author": {
+    "name": "Christian Freear",
+    "email": "christianfreear@gmail.com"
+  },
   "license": "UNLICENSE",
   "bugs": {
     "url": "https://github.com/cfreear/jquery-textlimit/issues"
