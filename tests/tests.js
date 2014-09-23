@@ -88,9 +88,7 @@ QUnit.test("data attribute word limit reached", function(assert) {
 
     simulateTyping(string, input);
 
-    assert.equal( input.data('wordlimit'), 5, "data.wordlimit = 5" )
-
-    //should strip "Eleven"
+    //should strip everything after "Five "
     assert.equal( input.val(), "One Two Three Four Five ", "Passed!");
 });
 
