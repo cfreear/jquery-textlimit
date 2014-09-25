@@ -18,14 +18,8 @@
         this.element = element;
 
         var data = $(this.element).data();
-console.log(defaults);
-console.log(options);
-console.log(data);
-console.log("=");
         //empty array used so as not to overwrite defaults
         this.options = $.extend( {}, defaults, options, data );
-console.log(this.options);
-console.log("----------");
 
         this._defaults = defaults;
         this._name = pluginName;
