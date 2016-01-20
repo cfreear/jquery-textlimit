@@ -1,6 +1,6 @@
 {
   "name": "jquery-textlimit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple plugin to restrict text inputs to specific word limits.",
   "main": "build/jquery.textlimit.min.js",
   "directories": {
