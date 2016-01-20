@@ -5,7 +5,9 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 
 var stripDebug = require('gulp-strip-debug');
-var uglifyjs = require('gulp-uglifyjs');
+var sourceMaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 
 var qunit = require('gulp-qunit');
 
@@ -19,11 +21,14 @@ gulp.task('jshint', function() {
 // Build task
 gulp.task('build', function() {
     return gulp.src('./src/jquery.textlimit.js')
-        .pipe(stripDebug())
-        .pipe(uglifyjs('jquery.textlimit.min.js', {
-            'outSourceMap': true
-        }))
-        .pipe(gulp.dest('./build/'));
+      .pipe(sourceMaps.init())
+      .pipe(stripDebug())
+      .pipe(uglify())
+      .pipe(rename({
+        extname: '.min.js'
+      }))
+      .pipe(sourceMaps.write('./'))
+      .pipe(gulp.dest('./build/'));
 });
 
 gulp.task('travis', function() {
