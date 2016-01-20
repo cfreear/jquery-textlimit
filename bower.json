@@ -1,0 +1,30 @@
+{
+  "name": "jquery-textlimit",
+  "description": "A simple plugin to restrict text inputs to specific word limits.",
+  "main": "build/jquery.textlimit.min.js",
+  "authors": [
+    "Christian Freear <christianfreear@gmail.com>"
+  ],
+  "license": "Unlicense",
+  "keywords": [
+    "jquery",
+    "text",
+    "limit",
+    "word",
+    "input",
+    "textarea"
+  ],
+  "homepage": "https://github.com/cfreear/jquery-textlimit",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cfreear/jquery-textlimit.git"
+  },
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
